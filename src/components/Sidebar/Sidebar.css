@@ -1,0 +1,62 @@
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #202124; /* Subtle dark color like Gemini */
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .menu-icon {
+    width: 28px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    width: 22px; /* Standardized smaller icon size */
+    height: 22px;
+    filter: brightness(0.8); /* Slightly dim to match the theme */
+  }
+  
+  .new-chat, .recent-entry, .bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .new-chat:hover, .recent-entry:hover, .bottom-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .recent-title {
+    font-weight: bold;
+    margin: 15px 0;
+    color: #b0b0b0;
+  }
+  
+  .collapsed .new-chat p, 
+  .collapsed .recent-title, 
+  .collapsed .recent-entry p, 
+  .collapsed .bottom-item p {
+    display: none;
+  }
+  
+  .bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+  }
+  

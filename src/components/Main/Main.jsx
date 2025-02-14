@@ -8,17 +8,15 @@ const Main = () => {
   return (
     <div className="main">
       <div className="nav">
-        <p className="logo">Gemini</p>
+        <p className="logo">NeuraLink</p>
         <img className="user-icon" src={assets.user_icon} alt="User" />
       </div>
+      
 
       <div className="main-container">
-        <div className="greet">
-          <p><span>Hello, Dev</span></p>
-          <p>How can I assist you today?</p>
-        </div>
-
-        <div className="cards">
+        {!showResult
+        ?<>
+            <div className="cards">
           {[
             { text: "Suggest places to visit in Pune", icon: assets.compass_icon },
             { text: "Creative ideas for a project", icon: assets.bulb_icon },
@@ -31,12 +29,26 @@ const Main = () => {
             </div>
           ))}
         </div>
+        </>
+        : <div className='result'>
+          <div className="result-title">
+            <img src={assets.user_icon} alt="" />
+            <p>{recentPrompt}</p>
+          </div>
+        </div>
+        }
+        <div className="greet">
+          <p><span>Hello, Dev</span></p>
+          <p>How can I assist you today?</p>
+        </div>
+
+        
         <div className="main-bottom">
             <div className="search-box">
                 <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here'/>
                 <img src={assets.gallery_icon} alt="" />
                 <img src={assets.mic_icon} alt="" />
-                <img src= {assets.send_icon}alt="" />
+                <img onClick={()=>onSent()} src= {assets.send_icon}alt="" />
             </div>
             <p className="bottom-info">
                 Bot may display inaccurate info

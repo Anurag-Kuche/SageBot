@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { assets } from '../../assets/assets';
 import './Main.css';
+import { Context } from '../../context/context';
 
 const Main = () => {
+  const {onSent,recentPrompt,showResult,loading,resultData,setInput,input}=useContext(Context);
   return (
     <div className="main">
       <div className="nav">
@@ -11,7 +14,7 @@ const Main = () => {
 
       <div className="main-container">
         <div className="greet">
-          <p><span>Hello, Botter</span></p>
+          <p><span>Hello, Dev</span></p>
           <p>How can I assist you today?</p>
         </div>
 
@@ -30,8 +33,14 @@ const Main = () => {
         </div>
         <div className="main-bottom">
             <div className="search-box">
-                <input type="text" />
+                <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here'/>
+                <img src={assets.gallery_icon} alt="" />
+                <img src={assets.mic_icon} alt="" />
+                <img src= {assets.send_icon}alt="" />
             </div>
+            <p className="bottom-info">
+                Bot may display inaccurate info
+            </p>
         </div>
       </div>
     </div>

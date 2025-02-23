@@ -9,7 +9,7 @@ const Main = () => {
     <div className="main">
       <div className="nav">
         <p className="logo">NeuraLink</p>
-        <img className="user-icon" src={assets.user_icon} alt="user" />
+        <img className="user-icon" src={assets.user_icon} alt="User" />
       </div>
       
 

@@ -3,7 +3,7 @@ import { assets } from "../../assets/assets";
 import "./Sidebar.css"; // Importing CSS file
 
 function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);//
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : "expanded"}`} style={{ backgroundColor: "#2C2F33" }}>
